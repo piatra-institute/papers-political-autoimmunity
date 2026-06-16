@@ -1,0 +1,10 @@
+[project]
+name = "political-autoimmunity-sim"
+version = "0.1.0"
+description = "Synthetic decomposition, uncertainty propagation, and sensitivity for Political Autoimmunity: adverse-interest voting under competing interest functions"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.11",
+    "matplotlib>=3.8",
+]

@@ -1,0 +1,444 @@
+{
+  "deterministic": {
+    "groups": {
+      "lgbtq": {
+        "vote_share": 0.12,
+        "gross_risk_per_supporter": 0.81927375,
+        "foreseeable_risk_per_supporter": 0.577329375,
+        "priority_risk_per_supporter": 0.40359256875000005,
+        "gross_risk_pop_weighted": 0.09831285,
+        "priority_risk_pop_weighted": 0.04843110825000001,
+        "awareness_attrition": 0.49262236065783876,
+        "protective_benefit_total": 0.0,
+        "cells": {
+          "civil_rights": {
+            "R": 0.45927000000000007,
+            "K": 0.7250000000000001,
+            "FR": 0.3329707500000001,
+            "PR": 0.24972806250000007
+          },
+          "trans_health": {
+            "R": 0.20712375,
+            "K": 0.7,
+            "FR": 0.14498662499999998,
+            "PR": 0.09424130624999999
+          },
+          "hate_enforce": {
+            "R": 0.15288,
+            "K": 0.65,
+            "FR": 0.099372,
+            "PR": 0.0596232
+          }
+        },
+        "interest_models": {
+          "material": {
+            "net_alignment_per_supporter": -0.27309125,
+            "autoimmunity_per_supporter": 0.25309125,
+            "autoimmunity_pop_weighted": 0.030370949999999997
+          },
+          "rights": {
+            "net_alignment_per_supporter": -0.27309125,
+            "autoimmunity_per_supporter": 0.25309125,
+            "autoimmunity_pop_weighted": 0.030370949999999997
+          },
+          "subjective": {
+            "net_alignment_per_supporter": -0.28540546875,
+            "autoimmunity_per_supporter": 0.26540546875000004,
+            "autoimmunity_pop_weighted": 0.03184865625
+          },
+          "expressive": {
+            "net_alignment_per_supporter": -0.27309125,
+            "autoimmunity_per_supporter": 0.25309125,
+            "autoimmunity_pop_weighted": 0.030370949999999997
+          },
+          "coalition_entry": {
+            "net_alignment_per_supporter": -0.27309125,
+            "autoimmunity_per_supporter": 0.25309125,
+            "autoimmunity_pop_weighted": 0.030370949999999997
+          },
+          "protest": {
+            "net_alignment_per_supporter": -0.27309125,
+            "autoimmunity_per_supporter": 0.25309125,
+            "autoimmunity_pop_weighted": 0.030370949999999997
+          },
+          "institutional": {
+            "net_alignment_per_supporter": -0.27638285377358496,
+            "autoimmunity_per_supporter": 0.25638285377358494,
+            "autoimmunity_pop_weighted": 0.03076594245283019
+          }
+        }
+      },
+      "muslim": {
+        "vote_share": 0.21,
+        "gross_risk_per_supporter": 0.47347,
+        "foreseeable_risk_per_supporter": 0.3358805,
+        "priority_risk_per_supporter": 0.27669872500000003,
+        "gross_risk_pop_weighted": 0.0994287,
+        "priority_risk_pop_weighted": 0.05810673225000001,
+        "awareness_attrition": 0.5844060341732318,
+        "protective_benefit_total": 0.0,
+        "cells": {
+          "entry_travel": {
+            "R": 0.24576000000000003,
+            "K": 0.75,
+            "FR": 0.18432000000000004,
+            "PR": 0.15667200000000003
+          },
+          "gaza_protest": {
+            "R": 0.08574999999999998,
+            "K": 0.6499999999999999,
+            "FR": 0.05573749999999998,
+            "PR": 0.05295062499999998
+          },
+          "religious_bias": {
+            "R": 0.14196,
+            "K": 0.675,
+            "FR": 0.095823,
+            "PR": 0.0670761
+          }
+        },
+        "interest_models": {
+          "material": {
+            "net_alignment_per_supporter": -0.1703857142857143,
+            "autoimmunity_per_supporter": 0.15038571428571432,
+            "autoimmunity_pop_weighted": 0.031581000000000005
+          },
+          "rights": {
+            "net_alignment_per_supporter": -0.164396875,
+            "autoimmunity_per_supporter": 0.144396875,
+            "autoimmunity_pop_weighted": 0.030323343750000002
+          },
+          "subjective": {
+            "net_alignment_per_supporter": -0.15589219999999998,
+            "autoimmunity_per_supporter": 0.1358922,
+            "autoimmunity_pop_weighted": 0.028537361999999997
+          },
+          "expressive": {
+            "net_alignment_per_supporter": -0.11457933333333332,
+            "autoimmunity_per_supporter": 0.09457933333333332,
+            "autoimmunity_pop_weighted": 0.019861659999999996
+          },
+          "coalition_entry": {
+            "net_alignment_per_supporter": -0.18854153846153848,
+            "autoimmunity_per_supporter": 0.1685415384615385,
+            "autoimmunity_pop_weighted": 0.03539372307692308
+          },
+          "protest": {
+            "net_alignment_per_supporter": -0.11118764705882352,
+            "autoimmunity_per_supporter": 0.09118764705882351,
+            "autoimmunity_pop_weighted": 0.01914940588235294
+          },
+          "institutional": {
+            "net_alignment_per_supporter": -0.16095695652173914,
+            "autoimmunity_per_supporter": 0.14095695652173915,
+            "autoimmunity_pop_weighted": 0.02960096086956522
+          }
+        }
+      },
+      "latino": {
+        "vote_share": 0.46,
+        "gross_risk_per_supporter": 0.3671625,
+        "foreseeable_risk_per_supporter": 0.24749156249999998,
+        "priority_risk_per_supporter": 0.15817725,
+        "gross_risk_pop_weighted": 0.16889475,
+        "priority_risk_pop_weighted": 0.072761535,
+        "awareness_attrition": 0.4308099274844244,
+        "protective_benefit_total": 0.5,
+        "cells": {
+          "immigration": {
+            "R": 0.25245,
+            "K": 0.7,
+            "FR": 0.17671499999999998,
+            "PR": 0.11486474999999999
+          },
+          "economy": {
+            "R": 0.025987500000000004,
+            "K": 0.675,
+            "FR": 0.017541562500000003,
+            "PR": 0.014033250000000004
+          },
+          "civil_rights": {
+            "R": 0.088725,
+            "K": 0.6,
+            "FR": 0.053235,
+            "PR": 0.02927925
+          }
+        },
+        "interest_models": {
+          "material": {
+            "net_alignment_per_supporter": 0.26745859375,
+            "autoimmunity_per_supporter": 0.05217499999999999,
+            "autoimmunity_pop_weighted": 0.024000499999999998
+          },
+          "rights": {
+            "net_alignment_per_supporter": -0.061044117647058825,
+            "autoimmunity_per_supporter": 0.09916323529411764,
+            "autoimmunity_pop_weighted": 0.045615088235294116
+          },
+          "subjective": {
+            "net_alignment_per_supporter": 0.08315937500000002,
+            "autoimmunity_per_supporter": 0.094445625,
+            "autoimmunity_pop_weighted": 0.043444987500000004
+          },
+          "expressive": {
+            "net_alignment_per_supporter": 0.04427916666666667,
+            "autoimmunity_per_supporter": 0.10039166666666666,
+            "autoimmunity_pop_weighted": 0.04618016666666666
+          },
+          "coalition_entry": {
+            "net_alignment_per_supporter": 0.04904999999999998,
+            "autoimmunity_per_supporter": 0.128555,
+            "autoimmunity_pop_weighted": 0.0591353
+          },
+          "protest": {
+            "net_alignment_per_supporter": -0.0416675,
+            "autoimmunity_per_supporter": 0.12047000000000001,
+            "autoimmunity_pop_weighted": 0.055416200000000006
+          },
+          "institutional": {
+            "net_alignment_per_supporter": 0.007024679487179476,
+            "autoimmunity_per_supporter": 0.11231217948717948,
+            "autoimmunity_pop_weighted": 0.05166360256410256
+          }
+        }
+      }
+    },
+    "params": {
+      "lambda": 0.5,
+      "tau": 0.02,
+      "kappa": 12.0
+    }
+  },
+  "ranking": {
+    "orderings": {
+      "material": [
+        "lgbtq",
+        "muslim",
+        "latino"
+      ],
+      "rights": [
+        "lgbtq",
+        "muslim",
+        "latino"
+      ],
+      "subjective": [
+        "lgbtq",
+        "muslim",
+        "latino"
+      ],
+      "expressive": [
+        "lgbtq",
+        "latino",
+        "muslim"
+      ],
+      "coalition_entry": [
+        "lgbtq",
+        "muslim",
+        "latino"
+      ],
+      "protest": [
+        "lgbtq",
+        "latino",
+        "muslim"
+      ],
+      "institutional": [
+        "lgbtq",
+        "muslim",
+        "latino"
+      ]
+    },
+    "most_misaligned_by_model": {
+      "material": "lgbtq",
+      "rights": "lgbtq",
+      "subjective": "lgbtq",
+      "expressive": "lgbtq",
+      "coalition_entry": "lgbtq",
+      "protest": "lgbtq",
+      "institutional": "lgbtq"
+    },
+    "n_distinct_orderings": 2,
+    "pop_orderings": {
+      "material": [
+        "muslim",
+        "lgbtq",
+        "latino"
+      ],
+      "rights": [
+        "latino",
+        "lgbtq",
+        "muslim"
+      ],
+      "subjective": [
+        "latino",
+        "lgbtq",
+        "muslim"
+      ],
+      "expressive": [
+        "latino",
+        "lgbtq",
+        "muslim"
+      ],
+      "coalition_entry": [
+        "latino",
+        "muslim",
+        "lgbtq"
+      ],
+      "protest": [
+        "latino",
+        "lgbtq",
+        "muslim"
+      ],
+      "institutional": [
+        "latino",
+        "lgbtq",
+        "muslim"
+      ]
+    },
+    "most_misaligned_by_model_pop": {
+      "material": "muslim",
+      "rights": "latino",
+      "subjective": "latino",
+      "expressive": "latino",
+      "coalition_entry": "latino",
+      "protest": "latino",
+      "institutional": "latino"
+    },
+    "n_distinct_orderings_pop": 3,
+    "gross_order": [
+      "lgbtq",
+      "muslim",
+      "latino"
+    ],
+    "priority_order": [
+      "lgbtq",
+      "muslim",
+      "latino"
+    ],
+    "priority_order_pop_weighted": [
+      "latino",
+      "muslim",
+      "lgbtq"
+    ],
+    "counting_frame_inverts": true,
+    "most_misaligned_per_supporter": "lgbtq",
+    "most_misaligned_pop_weighted": "latino",
+    "most_misaligned_tally": {
+      "lgbtq": 7,
+      "muslim": 0,
+      "latino": 0
+    },
+    "any_group_unanimous": true,
+    "net_sign_by_group": {
+      "lgbtq": {
+        "min": -0.28540546875,
+        "max": -0.27309125,
+        "flips_sign": false
+      },
+      "muslim": {
+        "min": -0.18854153846153848,
+        "max": -0.11118764705882352,
+        "flips_sign": false
+      },
+      "latino": {
+        "min": -0.061044117647058825,
+        "max": 0.26745859375,
+        "flips_sign": true
+      }
+    },
+    "n_groups_flip_sign": 1
+  },
+  "monte_carlo": {
+    "n_samples": 40000,
+    "seed": 20240,
+    "priority_risk_per_supporter": {
+      "lgbtq": {
+        "p05": 0.24886188595326775,
+        "p50": 0.3964801500857646,
+        "p95": 0.5845510833553965
+      },
+      "muslim": {
+        "p05": 0.1623408516431539,
+        "p50": 0.26971484284428315,
+        "p95": 0.41669830415159625
+      },
+      "latino": {
+        "p05": 0.07974761836753351,
+        "p50": 0.15097188413030382,
+        "p95": 0.2598180525662606
+      }
+    },
+    "p_most_misaligned_rights_model": {
+      "lgbtq": 0.91755,
+      "muslim": 0.074575,
+      "latino": 0.007875
+    },
+    "p_most_misaligned_priority": {
+      "lgbtq": 0.836525,
+      "muslim": 0.15635,
+      "latino": 0.007125
+    },
+    "priority_order": [
+      "lgbtq",
+      "muslim",
+      "latino"
+    ],
+    "p_priority_order_holds": 0.743475
+  },
+  "variance_attribution": {
+    "lgbtq": {
+      "dominant_cell": "civil_rights",
+      "shares": {
+        "E": 0.2716381034341059,
+        "D": 0.06950043833870509,
+        "H": 0.06950043833870509,
+        "P": 0.06950043833870509,
+        "M": 0.06950043833870509,
+        "S": 0.21043766738211417,
+        "K": 0.2399224758289596
+      },
+      "top_factor": "E",
+      "top_two_share": 0.5115605792630655
+    },
+    "muslim": {
+      "dominant_cell": "entry_travel",
+      "shares": {
+        "E": 0.30992051085159855,
+        "D": 0.11421956028428729,
+        "H": 0.11421956028428729,
+        "P": 0.11421956028428729,
+        "M": 0.11421956028428729,
+        "S": 0.08037935372434901,
+        "K": 0.1528218942869033
+      },
+      "top_factor": "E",
+      "top_two_share": 0.46274240513850184
+    },
+    "latino": {
+      "dominant_cell": "immigration",
+      "shares": {
+        "E": 0.31197830988321584,
+        "D": 0.12455784563976617,
+        "H": 0.0655133819701621,
+        "P": 0.04113724020124873,
+        "M": 0.09309492219892906,
+        "S": 0.202935977348904,
+        "K": 0.16078232275777413
+      },
+      "top_factor": "E",
+      "top_two_share": 0.5149142872321198
+    }
+  },
+  "tornado": {
+    "group": "lgbtq",
+    "base_score": 0.25309125,
+    "swings": {
+      "E": 0.8729583332832778,
+      "D": 0.31358026868664945,
+      "H": 0.3431238364491843,
+      "P": 0.4015016843975818,
+      "M": 0.3941557495836752
+    },
+    "top_input": "E",
+    "top_input_swing": 0.8729583332832778
+  }
+}
