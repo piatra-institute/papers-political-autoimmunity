@@ -18,9 +18,45 @@ import numpy as np
 
 SEED = 20240
 N_MC = 40000
-KAPPA = 12.0          # Beta concentration: Beta(mean*KAPPA, (1-mean)*KAPPA)
 LAMBDA = 0.5          # weight on public foreseeability F vs voter awareness a in K
 TAU = 0.02            # tolerance threshold below which net adverse risk is not counted
+
+# ---------------------------------------------------------------------------
+# Per-factor Beta concentration: each input is drawn Beta(mean*kappa_f,
+# (1-mean)*kappa_f), so kappa_f is a measurement-quality knob. A LOW kappa is a
+# wide, uncertain Beta (the input is estimated badly); a HIGH kappa is a tight
+# Beta (the input is read off the public record with confidence). These values
+# are the modelling assumption that gives the variance decomposition its
+# meaning: without per-factor concentrations every factor's log-variance is
+# fixed by its mean alone, and the attribution reflects the stipulated means
+# rather than any difference in how well the inputs are measured.
+#
+# The split follows the measurement situation of each input:
+#   POORLY MEASURED (low kappa, wide): exposure E, salience S, and awareness a
+#     (which enters the gate K) are survey-estimated quantities -- the share of
+#     a group a domain reaches, how much a group says an issue matters, and what
+#     voters report knowing -- carrying sampling error, framing sensitivity, and
+#     self-report bias. These are the quantities an analyst estimates worst.
+#   WELL MEASURED (high kappa, tight): candidate hostility H, implementation
+#     probability P, policy magnitude M, and institutional dependence D are read
+#     from platform, record, appointments, statute, and administrative
+#     structure -- public, documentary signal an analyst can pin down far more
+#     tightly than a survey mean.
+# Public foreseeability F is part of the same public record as H/P/M, so it is
+# drawn tight; awareness a is a survey self-report, so it is drawn wide; the
+# composite gate K = lambda*F + (1-lambda)*a therefore inherits a wide
+# component and is, on net, one of the poorly-measured quantities.
+KAPPA_F = {
+    "E": 5.0,    # exposure        -- survey-estimated, wide
+    "S": 5.0,    # salience        -- survey-estimated, wide
+    "a": 4.0,    # awareness       -- self-reported, widest
+    "F": 30.0,   # foreseeability  -- public record, tight
+    "D": 30.0,   # dependence      -- institutional structure, tight
+    "H": 30.0,   # hostility       -- platform/record, tight
+    "P": 30.0,   # implementation  -- capacity/courts, tight
+    "M": 30.0,   # magnitude       -- statute/precedent, tight
+}
+KAPPA = KAPPA_F   # exported for the params block; no single shared value remains
 
 # ---------------------------------------------------------------------------
 # The synthetic dataset. Each cell is one (group, policy domain). Fields:
@@ -113,7 +149,7 @@ def _cell_risk(c: dict) -> dict:
 
 
 def _deterministic() -> dict:
-    out = {"groups": {}, "params": {"lambda": LAMBDA, "tau": TAU, "kappa": KAPPA}}
+    out = {"groups": {}, "params": {"lambda": LAMBDA, "tau": TAU, "kappa_per_factor": KAPPA_F}}
     per_supporter_priority = {}
     for gname, group in GROUPS.items():
         V = group["vote_share"]
@@ -211,9 +247,11 @@ def _ranking_analysis(det: dict) -> dict:
 
 
 # ---------------------------------------------------------------------------
-def _beta_draw(rng, mean: float, n: int) -> np.ndarray:
+def _beta_draw(rng, mean: float, n: int, factor: str) -> np.ndarray:
+    """Draw one input's Monte-Carlo samples at that input's own concentration."""
     mean = min(max(mean, 1e-4), 1 - 1e-4)
-    return rng.beta(mean * KAPPA, (1 - mean) * KAPPA, size=n)
+    kappa = KAPPA_F[factor]
+    return rng.beta(mean * kappa, (1 - mean) * kappa, size=n)
 
 
 def _monte_carlo(det: dict) -> dict:
@@ -225,9 +263,9 @@ def _monte_carlo(det: dict) -> dict:
         cells = group["cells"]
         cell_draws = {}
         for k, c in cells.items():
-            d = {f: _beta_draw(rng, c[f], N_MC) for f in ["E", "D", "H", "P", "M", "S"]}
-            F = _beta_draw(rng, c["F"], N_MC)
-            a = _beta_draw(rng, c["a"], N_MC)
+            d = {f: _beta_draw(rng, c[f], N_MC, f) for f in ["E", "D", "H", "P", "M", "S"]}
+            F = _beta_draw(rng, c["F"], N_MC, "F")
+            a = _beta_draw(rng, c["a"], N_MC, "a")
             d["K"] = LAMBDA * F + (1 - LAMBDA) * a
             d["R"] = d["E"] * d["D"] * d["H"] * d["P"] * d["M"]
             d["PR"] = d["R"] * d["K"] * d["S"]
@@ -287,10 +325,32 @@ def _variance_attribution(det: dict) -> dict:
     """
     from scipy.special import polygamma  # trigamma = polygamma(1, .)
 
-    def var_log_beta(mean):
+    def var_log_beta(mean, factor):
+        """Exact Var(log X) for X ~ Beta at that factor's own concentration."""
         mean = min(max(mean, 1e-4), 1 - 1e-4)
-        al, be = mean * KAPPA, (1 - mean) * KAPPA
+        kappa = KAPPA_F[factor]
+        al, be = mean * kappa, (1 - mean) * kappa
         return float(polygamma(1, al) - polygamma(1, al + be))
+
+    def beta_var(mean, factor):
+        """Var(X) for X ~ Beta at that factor's own concentration."""
+        mean = min(max(mean, 1e-4), 1 - 1e-4)
+        kappa = KAPPA_F[factor]
+        al, be = mean * kappa, (1 - mean) * kappa
+        return al * be / ((al + be) ** 2 * (al + be + 1))
+
+    def var_log_gate(c):
+        """Var(log K) for the composite gate K = lambda*F + (1-lambda)*a.
+
+        F and a now carry different concentrations, so K is a mixture of two
+        Betas rather than a single Beta; its log-variance is obtained by the
+        delta method, Var(log K) ~ Var(K)/E[K]^2, from the variances of the
+        public foreseeability term (tight) and the survey awareness term (wide).
+        """
+        mean_k = _k(c)
+        var_k = LAMBDA ** 2 * beta_var(c["F"], "F") \
+            + (1 - LAMBDA) ** 2 * beta_var(c["a"], "a")
+        return float(var_k / mean_k ** 2)
 
     out = {}
     for gname, group in GROUPS.items():
@@ -298,8 +358,8 @@ def _variance_attribution(det: dict) -> dict:
         # dominant cell = largest gross risk R
         dom = max(cells, key=lambda k: det["groups"][gname]["cells"][k]["R"])
         c = cells[dom]
-        terms = {f: var_log_beta(c[f]) for f in ["E", "D", "H", "P", "M", "S"]}
-        terms["K"] = var_log_beta(_k(c))      # K treated as one composite gate factor
+        terms = {f: var_log_beta(c[f], f) for f in ["E", "D", "H", "P", "M", "S"]}
+        terms["K"] = var_log_gate(c)          # composite gate, delta-method log-variance
         tot = sum(terms.values())
         shares = {f: terms[f] / tot for f in terms}
         top = sorted(shares.items(), key=lambda kv: -kv[1])
@@ -331,15 +391,16 @@ def _tornado(det: dict) -> dict:
             s += w[k] * max(0.0, R - cc["B"] - TAU)
         return s
 
-    def beta_q(mean, p):
+    def beta_q(mean, p, factor):
         from scipy.stats import beta as B
         mean = min(max(mean, 1e-4), 1 - 1e-4)
-        return float(B.ppf(p, mean * KAPPA, (1 - mean) * KAPPA))
+        kappa = KAPPA_F[factor]
+        return float(B.ppf(p, mean * kappa, (1 - mean) * kappa))
 
     swings = {}
     for f in ["E", "D", "H", "P", "M"]:
-        lo = {k: {f: beta_q(c[f], 0.05)} for k, c in cells.items()}
-        hi = {k: {f: beta_q(c[f], 0.95)} for k, c in cells.items()}
+        lo = {k: {f: beta_q(c[f], 0.05, f)} for k, c in cells.items()}
+        hi = {k: {f: beta_q(c[f], 0.95, f)} for k, c in cells.items()}
         swings[f] = abs(score(hi) - score(lo)) / base
     ranked = sorted(swings.items(), key=lambda kv: -kv[1])
     return {"group": g, "base_score": base,
