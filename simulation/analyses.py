@@ -417,12 +417,22 @@ def run() -> dict:
     var = _variance_attribution(det)
     tor = _tornado(det)
     del det["_priority_order"]
+    # Prose reports net-alignment as a signed magnitude ("misaligned at -0.189"),
+    # so expose the absolute values too, letting the claims gate reconcile the
+    # magnitude tokens the paper prints.
+    prose_mag = {}
+    for g, gd in det["groups"].items():
+        for m, md in gd.get("interest_models", {}).items():
+            na = md.get("net_alignment_per_supporter")
+            if na is not None:
+                prose_mag[f"{g}_{m}_net_alignment_abs"] = abs(na)
     return {
         "deterministic": det,
         "ranking": ranking,
         "monte_carlo": mc,
         "variance_attribution": var,
         "tornado": tor,
+        "prose_magnitudes": prose_mag,
     }
 
 

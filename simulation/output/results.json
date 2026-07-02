@@ -449,5 +449,28 @@
     },
     "top_input": "E",
     "top_input_swing": 1.268700064554455
+  },
+  "prose_magnitudes": {
+    "lgbtq_material_net_alignment_abs": 0.27309125,
+    "lgbtq_rights_net_alignment_abs": 0.27309125,
+    "lgbtq_subjective_net_alignment_abs": 0.28540546875,
+    "lgbtq_expressive_net_alignment_abs": 0.27309125,
+    "lgbtq_coalition_entry_net_alignment_abs": 0.27309125,
+    "lgbtq_protest_net_alignment_abs": 0.27309125,
+    "lgbtq_institutional_net_alignment_abs": 0.27638285377358496,
+    "muslim_material_net_alignment_abs": 0.1703857142857143,
+    "muslim_rights_net_alignment_abs": 0.164396875,
+    "muslim_subjective_net_alignment_abs": 0.15589219999999998,
+    "muslim_expressive_net_alignment_abs": 0.11457933333333332,
+    "muslim_coalition_entry_net_alignment_abs": 0.18854153846153848,
+    "muslim_protest_net_alignment_abs": 0.11118764705882352,
+    "muslim_institutional_net_alignment_abs": 0.16095695652173914,
+    "latino_material_net_alignment_abs": 0.26745859375,
+    "latino_rights_net_alignment_abs": 0.061044117647058825,
+    "latino_subjective_net_alignment_abs": 0.08315937500000002,
+    "latino_expressive_net_alignment_abs": 0.04427916666666667,
+    "latino_coalition_entry_net_alignment_abs": 0.04904999999999998,
+    "latino_protest_net_alignment_abs": 0.0416675,
+    "latino_institutional_net_alignment_abs": 0.007024679487179476
   }
 }
