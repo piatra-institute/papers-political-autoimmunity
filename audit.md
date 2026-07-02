@@ -39,3 +39,13 @@ Notes / deferred:
 - Status set to `built`, not `published`: deploying to the web (sync + page.tsx entry + status flip + GitHub repo create/push) is the maintainer's pipeline step.
 - The seed's interactive playground is not built; the runnable simulation is the paper's companion artifact and already exposes the interest function, gates, and counting frame as adjustable inputs in code.
 - The seven interest functions use two special mechanisms (subjective weights by stated salience S; institutional weights by institutional dependence D) and five type-weightings; this keeps the rank-reversal a transparent consequence of which domain type each model privileges rather than an arbitrary tuning.
+
+---
+
+## 2026-07-02 — reform pass (de-template)
+
+Corpus reform, structural (the paper's model and honest framing were already sound; §5-6 already demote the numbers to "facts about a fully specified model" and disclose that the variance decomposition reflects stipulated measurement-quality priors).
+
+- paper/PAPER.md §7: retitled "What the Model Cannot Settle" -> "The Standing to Name the Interest" and reframed from a limits ledger into the argument's culmination, ending on the standing to define a group's interest against its own expressed choice (the commitment the construct shares with the accusation) rather than a ceremonial "what the model can't do" closer. No number or citation changed.
+- simulation/analyses.py: added a `prose_magnitudes` block exposing absolute net-alignment values, so the claims gate reconciles the signed magnitudes the prose prints (-0.189, -0.061); previously 2 no-match, now 0.
+- Verify: voice 0 errors; refs 44/44, 0 missing/0 unused; claims 48/0 unmatched; check => PASS; synced.
