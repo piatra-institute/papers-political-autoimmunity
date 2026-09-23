@@ -1,5 +1,5 @@
 {
-  "pdf_sha256": "f5d897dbb3bc7a38840c2850cff3c23daa45b3237d6ee6ba91a490b7fde06fb4",
+  "pdf_sha256": "1f6767441318c3d1ebbb779602e7826758f888631e5b600185b96dcdaa7a48c0",
   "page_count": 14,
   "pages_inspected": [
     1,
@@ -18,5 +18,5 @@
     14
   ],
   "all_pages_inspected": true,
-  "notes": "All 14 pages inspected after the prose revision; figure titles replaced with descriptive text, and in the net-alignment panel the legend and aligned/misaligned labels were moved off the data lines and the interest-function tick labels rotated so they no longer collide. Metadata-only rebuild: the web blurb in metadata.yaml, a hashed build input, changed, so the PDF was re-rendered (07635e1b95b2 to f5d897dbb3bc); the rendered text is byte-for-byte identical and no page was re-inspected."
+  "notes": "All 14 pages inspected after the migration; citations and the citeproc reference list render correctly, no unresolved keys. Metadata-only rebuild: the web blurb in metadata.yaml, a hashed build input, changed, so the PDF was re-rendered (edc19450f97d to 1f6767441318); the rendered text is byte-for-byte identical and no page was re-inspected."
 }

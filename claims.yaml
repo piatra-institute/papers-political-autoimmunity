@@ -1,0 +1,1021 @@
+schema: 1
+coverage: reviewed
+reviewed_manuscript_sha256: 4091182bb92b1869f7a8fc6fdf8a0c451b31d2997ebecd3ee7ac3adf821faa7b
+claims:
+- id: abs-latino-material
+  kind: computation
+  passage: The interest function moves the Latino vote from aligned (net $+0.267$) under a material reading
+    to misaligned ($-0.061$) under a rights reading, while the other two groups remain misaligned under
+    every reading.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/latino/interest_models/material/net_alignment_per_supporter
+    reported: '+0.267'
+    units: net alignment per supporter
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02);
+      material reading
+    decimals: 3
+- id: abs-latino-rights
+  kind: computation
+  passage: The interest function moves the Latino vote from aligned (net $+0.267$) under a material reading
+    to misaligned ($-0.061$) under a rights reading, while the other two groups remain misaligned under
+    every reading.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/latino/interest_models/rights/net_alignment_per_supporter
+    reported: '-0.061'
+    units: net alignment per supporter
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02);
+      rights reading
+    decimals: 3
+- id: abs-retain-min
+  kind: computation
+  passage: The gates retain between $0.431$ and $0.584$ of each group's gross risk.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/latino/awareness_retained
+    reported: '0.431'
+    units: share of gross risk
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: abs-retain-max
+  kind: computation
+  passage: The gates retain between $0.431$ and $0.584$ of each group's gross risk.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/muslim/awareness_retained
+    reported: '0.584'
+    units: share of gross risk
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: abs-var-E
+  kind: computation
+  passage: Exposure accounts for $0.467$ of the variance in the sharpest cell and policy hostility for
+    $0.016$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /variance_attribution/lgbtq/shares/E
+    reported: '0.467'
+    units: variance share
+    conditions: variance of log priority risk in the dominant cell, exact for Beta factors and delta method
+      for the awareness gate; LGBTQ civil rights
+    decimals: 3
+- id: abs-var-H
+  kind: computation
+  passage: Exposure accounts for $0.467$ of the variance in the sharpest cell and policy hostility for
+    $0.016$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /variance_attribution/lgbtq/shares/H
+    reported: '0.016'
+    units: variance share
+    conditions: variance of log priority risk in the dominant cell, exact for Beta factors and delta method
+      for the awareness gate; LGBTQ civil rights
+    decimals: 3
+- id: abs-p-rights
+  kind: computation
+  passage: The rights-dependence verdict on the LGBTQ case holds in $0.901$ of draws, and the full per-supporter
+    ordering in $0.664$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /monte_carlo/p_most_misaligned_rights_model/lgbtq
+    reported: '0.901'
+    units: share of draws
+    conditions: 40,000 seeded Monte Carlo draws (seed 20240), Beta inputs at per-factor concentrations
+    decimals: 3
+- id: abs-p-order
+  kind: computation
+  passage: The rights-dependence verdict on the LGBTQ case holds in $0.901$ of draws, and the full per-supporter
+    ordering in $0.664$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /monte_carlo/p_priority_order_holds
+    reported: '0.664'
+    units: share of draws
+    conditions: 40,000 seeded Monte Carlo draws (seed 20240), Beta inputs at per-factor concentrations
+    decimals: 3
+- id: abs-draws
+  kind: computation
+  passage: We apply it to three synthetic but anchored 2024 cases, support for Trump among LGBTQ, Muslim,
+    and Latino voters, solved exactly and propagated through 40,000 seeded Monte Carlo draws.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /monte_carlo/n_samples
+    reported: 40,000
+    units: draws
+    conditions: model setting
+    decimals: 0
+- id: param-tau
+  kind: computation
+  passage: The tolerance, $\tau = 0.02$, prevents domains of negligible net adversity from accumulating
+    into a verdict.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/params/tau
+    reported: '0.02'
+    units: risk units
+    conditions: model parameter
+    decimals: 2
+- id: param-lambda
+  kind: computation
+  passage: The gate combines them as $K_{gcj} = \lambda F_{cj} + (1-\lambda)\,a_{gcj}$, with $\lambda
+    = 0.5$ giving equal weight, and multiplying risk by $K$ gives foreseeable risk.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/params/lambda
+    reported: '0.5'
+    units: weight
+    conditions: model parameter
+    decimals: 1
+- id: param-kE
+  kind: computation
+  passage: The three survey-estimated inputs, exposure, salience, and reported awareness, are drawn from
+    wide Beta priors (concentrations 5, 5, and 4), and the inputs read from the public record, hostility,
+    implementation probability, magnitude, institutional dependence, and public foreseeability, from tight
+    ones (concentration 30), so the decomposition reflects a stipulated difference in measurement quality
+    in addition to the stipulated means.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/params/kappa_per_factor/E
+    reported: '5'
+    units: Beta concentration
+    conditions: model parameter; exposure
+    decimals: 0
+- id: param-ka
+  kind: computation
+  passage: The three survey-estimated inputs, exposure, salience, and reported awareness, are drawn from
+    wide Beta priors (concentrations 5, 5, and 4), and the inputs read from the public record, hostility,
+    implementation probability, magnitude, institutional dependence, and public foreseeability, from tight
+    ones (concentration 30), so the decomposition reflects a stipulated difference in measurement quality
+    in addition to the stipulated means.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/params/kappa_per_factor/a
+    reported: '4'
+    units: Beta concentration
+    conditions: model parameter; reported awareness
+    decimals: 0
+- id: param-kH
+  kind: computation
+  passage: The three survey-estimated inputs, exposure, salience, and reported awareness, are drawn from
+    wide Beta priors (concentrations 5, 5, and 4), and the inputs read from the public record, hostility,
+    implementation probability, magnitude, institutional dependence, and public foreseeability, from tight
+    ones (concentration 30), so the decomposition reflects a stipulated difference in measurement quality
+    in addition to the stipulated means.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/params/kappa_per_factor/H
+    reported: '30'
+    units: Beta concentration
+    conditions: model parameter; public-record inputs
+    decimals: 0
+- id: vote-latino
+  kind: computation
+  passage: 'Only the vote shares refer to reported figures, and their sources differ in quality: the Latino
+    share of $0.46$ is anchored to a validated-voter study that found Trump roughly even with Harris among
+    Hispanic voters [@pew2025]; the Muslim share of $0.21$ to an advocacy-group exit poll, recorded as
+    such and not as validated-voter evidence [@cair2024]; and the LGBTQ share of $0.12$ to exit-poll summaries,
+    the weakest anchor, used only for order of magnitude.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/latino/vote_share
+    reported: '0.46'
+    units: vote share
+    conditions: stipulated anchor
+    decimals: 2
+- id: vote-muslim
+  kind: computation
+  passage: 'Only the vote shares refer to reported figures, and their sources differ in quality: the Latino
+    share of $0.46$ is anchored to a validated-voter study that found Trump roughly even with Harris among
+    Hispanic voters [@pew2025]; the Muslim share of $0.21$ to an advocacy-group exit poll, recorded as
+    such and not as validated-voter evidence [@cair2024]; and the LGBTQ share of $0.12$ to exit-poll summaries,
+    the weakest anchor, used only for order of magnitude.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/muslim/vote_share
+    reported: '0.21'
+    units: vote share
+    conditions: stipulated anchor
+    decimals: 2
+- id: vote-lgbtq
+  kind: computation
+  passage: 'Only the vote shares refer to reported figures, and their sources differ in quality: the Latino
+    share of $0.46$ is anchored to a validated-voter study that found Trump roughly even with Harris among
+    Hispanic voters [@pew2025]; the Muslim share of $0.21$ to an advocacy-group exit poll, recorded as
+    such and not as validated-voter evidence [@cair2024]; and the LGBTQ share of $0.12$ to exit-poll summaries,
+    the weakest anchor, used only for order of magnitude.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/lgbtq/vote_share
+    reported: '0.12'
+    units: vote share
+    conditions: stipulated anchor
+    decimals: 2
+- id: cell-lgbtq-civil_rights
+  kind: computation
+  passage: The LGBTQ case covers federal civil-rights protection, transgender health and documentation,
+    and hate-crime and discrimination enforcement, all rights-dependent and all facing a hostile administration;
+    its per-cell gross risks are $0.459$, $0.207$, and $0.153$, the highest single-cell risks in the study,
+    because exposure, dependence, hostility, and implementation are jointly high.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/lgbtq/cells/civil_rights/R
+    reported: '0.459'
+    units: gross risk
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: cell-lgbtq-trans_health
+  kind: computation
+  passage: The LGBTQ case covers federal civil-rights protection, transgender health and documentation,
+    and hate-crime and discrimination enforcement, all rights-dependent and all facing a hostile administration;
+    its per-cell gross risks are $0.459$, $0.207$, and $0.153$, the highest single-cell risks in the study,
+    because exposure, dependence, hostility, and implementation are jointly high.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/lgbtq/cells/trans_health/R
+    reported: '0.207'
+    units: gross risk
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: cell-lgbtq-hate_enforce
+  kind: computation
+  passage: The LGBTQ case covers federal civil-rights protection, transgender health and documentation,
+    and hate-crime and discrimination enforcement, all rights-dependent and all facing a hostile administration;
+    its per-cell gross risks are $0.459$, $0.207$, and $0.153$, the highest single-cell risks in the study,
+    because exposure, dependence, hostility, and implementation are jointly high.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/lgbtq/cells/hate_enforce/R
+    reported: '0.153'
+    units: gross risk
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: cell-muslim-entry_travel
+  kind: computation
+  passage: The Muslim case covers entry and travel restriction, the Gaza-related foreign-policy grievance
+    that motivated much of the defection, and religious-bias enforcement, with risks of $0.246$, $0.086$,
+    and $0.142$; the protest domain scores low on adverse risk because its hostility is lower and its
+    content is expressive.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/muslim/cells/entry_travel/R
+    reported: '0.246'
+    units: gross risk
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: cell-muslim-gaza_protest
+  kind: computation
+  passage: The Muslim case covers entry and travel restriction, the Gaza-related foreign-policy grievance
+    that motivated much of the defection, and religious-bias enforcement, with risks of $0.246$, $0.086$,
+    and $0.142$; the protest domain scores low on adverse risk because its hostility is lower and its
+    content is expressive.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/muslim/cells/gaza_protest/R
+    reported: '0.086'
+    units: gross risk
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: cell-muslim-religious_bias
+  kind: computation
+  passage: The Muslim case covers entry and travel restriction, the Gaza-related foreign-policy grievance
+    that motivated much of the defection, and religious-bias enforcement, with risks of $0.246$, $0.086$,
+    and $0.142$; the protest domain scores low on adverse risk because its hostility is lower and its
+    content is expressive.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/muslim/cells/religious_bias/R
+    reported: '0.142'
+    units: gross risk
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: cell-latino-immigration
+  kind: computation
+  passage: The Latino case covers immigration enforcement, the economy, and civil-rights enforcement,
+    with risks of $0.252$, $0.026$, and $0.089$; the economy domain is the only cell in the study in which
+    the candidate is read as protective, with a nonzero benefit $B$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/latino/cells/immigration/R
+    reported: '0.252'
+    units: gross risk
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: cell-latino-economy
+  kind: computation
+  passage: The Latino case covers immigration enforcement, the economy, and civil-rights enforcement,
+    with risks of $0.252$, $0.026$, and $0.089$; the economy domain is the only cell in the study in which
+    the candidate is read as protective, with a nonzero benefit $B$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/latino/cells/economy/R
+    reported: '0.026'
+    units: gross risk
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: cell-latino-civil_rights
+  kind: computation
+  passage: The Latino case covers immigration enforcement, the economy, and civil-rights enforcement,
+    with risks of $0.252$, $0.026$, and $0.089$; the economy domain is the only cell in the study in which
+    the candidate is read as protective, with a nonzero benefit $B$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/latino/cells/civil_rights/R
+    reported: '0.089'
+    units: gross risk
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: gross-lgbtq
+  kind: computation
+  passage: Gross risk per supporter is $0.819$ for the LGBTQ case, $0.473$ for the Muslim case, and $0.367$
+    for the Latino case.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/lgbtq/gross_risk_per_supporter
+    reported: '0.819'
+    units: risk per supporter
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: gross-muslim
+  kind: computation
+  passage: Gross risk per supporter is $0.819$ for the LGBTQ case, $0.473$ for the Muslim case, and $0.367$
+    for the Latino case.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/muslim/gross_risk_per_supporter
+    reported: '0.473'
+    units: risk per supporter
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: gross-latino
+  kind: computation
+  passage: Gross risk per supporter is $0.819$ for the LGBTQ case, $0.473$ for the Muslim case, and $0.367$
+    for the Latino case.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/latino/gross_risk_per_supporter
+    reported: '0.367'
+    units: risk per supporter
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: priority-lgbtq
+  kind: computation
+  passage: The gates reduce these to priority risks of $0.404$, $0.277$, and $0.158$, retaining $0.493$,
+    $0.584$, and $0.431$ of gross risk and removing $0.507$, $0.416$, and $0.569$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/lgbtq/priority_risk_per_supporter
+    reported: '0.404'
+    units: risk per supporter
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: priority-muslim
+  kind: computation
+  passage: The gates reduce these to priority risks of $0.404$, $0.277$, and $0.158$, retaining $0.493$,
+    $0.584$, and $0.431$ of gross risk and removing $0.507$, $0.416$, and $0.569$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/muslim/priority_risk_per_supporter
+    reported: '0.277'
+    units: risk per supporter
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: priority-latino
+  kind: computation
+  passage: The gates reduce these to priority risks of $0.404$, $0.277$, and $0.158$, retaining $0.493$,
+    $0.584$, and $0.431$ of gross risk and removing $0.507$, $0.416$, and $0.569$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/latino/priority_risk_per_supporter
+    reported: '0.158'
+    units: risk per supporter
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: retained-lgbtq
+  kind: computation
+  passage: The gates reduce these to priority risks of $0.404$, $0.277$, and $0.158$, retaining $0.493$,
+    $0.584$, and $0.431$ of gross risk and removing $0.507$, $0.416$, and $0.569$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/lgbtq/awareness_retained
+    reported: '0.493'
+    units: share of gross risk
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: retained-muslim
+  kind: computation
+  passage: The gates reduce these to priority risks of $0.404$, $0.277$, and $0.158$, retaining $0.493$,
+    $0.584$, and $0.431$ of gross risk and removing $0.507$, $0.416$, and $0.569$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/muslim/awareness_retained
+    reported: '0.584'
+    units: share of gross risk
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: retained-latino
+  kind: computation
+  passage: The gates reduce these to priority risks of $0.404$, $0.277$, and $0.158$, retaining $0.493$,
+    $0.584$, and $0.431$ of gross risk and removing $0.507$, $0.416$, and $0.569$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/latino/awareness_retained
+    reported: '0.431'
+    units: share of gross risk
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: removed-lgbtq
+  kind: computation
+  passage: The gates reduce these to priority risks of $0.404$, $0.277$, and $0.158$, retaining $0.493$,
+    $0.584$, and $0.431$ of gross risk and removing $0.507$, $0.416$, and $0.569$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/lgbtq/awareness_removed
+    reported: '0.507'
+    units: share of gross risk
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: removed-muslim
+  kind: computation
+  passage: The gates reduce these to priority risks of $0.404$, $0.277$, and $0.158$, retaining $0.493$,
+    $0.584$, and $0.431$ of gross risk and removing $0.507$, $0.416$, and $0.569$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/muslim/awareness_removed
+    reported: '0.416'
+    units: share of gross risk
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: removed-latino
+  kind: computation
+  passage: The gates reduce these to priority risks of $0.404$, $0.277$, and $0.158$, retaining $0.493$,
+    $0.584$, and $0.431$ of gross risk and removing $0.507$, $0.416$, and $0.569$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/latino/awareness_removed
+    reported: '0.569'
+    units: share of gross risk
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: popw-lgbtq
+  kind: computation
+  passage: 'Weighting each group''s priority risk by its vote share reverses the order: population-weighted
+    priority risk is $0.048$ for the LGBTQ case, $0.058$ for the Muslim case, and $0.073$ for the Latino
+    case.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/lgbtq/priority_risk_pop_weighted
+    reported: '0.048'
+    units: vote-share-weighted risk
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: popw-muslim
+  kind: computation
+  passage: 'Weighting each group''s priority risk by its vote share reverses the order: population-weighted
+    priority risk is $0.048$ for the LGBTQ case, $0.058$ for the Muslim case, and $0.073$ for the Latino
+    case.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/muslim/priority_risk_pop_weighted
+    reported: '0.058'
+    units: vote-share-weighted risk
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: popw-latino
+  kind: computation
+  passage: 'Weighting each group''s priority risk by its vote share reverses the order: population-weighted
+    priority risk is $0.048$ for the LGBTQ case, $0.058$ for the Muslim case, and $0.073$ for the Latino
+    case.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/latino/priority_risk_pop_weighted
+    reported: '0.073'
+    units: vote-share-weighted risk
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: lgbtq-net-min
+  kind: computation
+  passage: 'The LGBTQ line lies between $-0.285$ and $-0.273$, because the case has no protective domain
+    for any interest function to weight: every reading finds the vote misaligned, differing only in degree.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /ranking/net_sign_by_group/lgbtq/min
+    reported: '-0.285'
+    units: net alignment
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02);
+      subjective reading
+    decimals: 3
+- id: lgbtq-net-max
+  kind: computation
+  passage: 'The LGBTQ line lies between $-0.285$ and $-0.273$, because the case has no protective domain
+    for any interest function to weight: every reading finds the vote misaligned, differing only in degree.'
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /ranking/net_sign_by_group/lgbtq/max
+    reported: '-0.273'
+    units: net alignment
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02)
+    decimals: 3
+- id: muslim-protest
+  kind: computation
+  passage: The Muslim line remains negative throughout, from $-0.111$ under the protest reading, which
+    downweights the adverse domains in favour of the expressive one, to $-0.189$ under the coalition-entry
+    reading.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/muslim/interest_models/protest/net_alignment_per_supporter
+    reported: '-0.111'
+    units: net alignment
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02);
+      protest reading
+    decimals: 3
+- id: muslim-coalition
+  kind: computation
+  passage: The Muslim line remains negative throughout, from $-0.111$ under the protest reading, which
+    downweights the adverse domains in favour of the expressive one, to $-0.189$ under the coalition-entry
+    reading.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/muslim/interest_models/coalition_entry/net_alignment_per_supporter
+    reported: '-0.189'
+    units: net alignment
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02);
+      coalition-entry reading
+    decimals: 3
+- id: latino-material
+  kind: computation
+  passage: Under the material reading, which weights the economy domain in which the candidate is protective,
+    Latino net alignment is $+0.267$; under the rights-dependence reading, which weights immigration and
+    civil-rights enforcement, it is $-0.061$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/latino/interest_models/material/net_alignment_per_supporter
+    reported: '+0.267'
+    units: net alignment
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02);
+      material reading
+    decimals: 3
+- id: latino-rights
+  kind: computation
+  passage: Under the material reading, which weights the economy domain in which the candidate is protective,
+    Latino net alignment is $+0.267$; under the rights-dependence reading, which weights immigration and
+    civil-rights enforcement, it is $-0.061$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /deterministic/groups/latino/interest_models/rights/net_alignment_per_supporter
+    reported: '-0.061'
+    units: net alignment
+    conditions: deterministic solution of the stipulated synthetic dataset (lambda = 0.5, tau = 0.02);
+      rights reading
+    decimals: 3
+- id: var-E
+  kind: computation
+  passage: For the dominant LGBTQ cell, exposure accounts for $0.467$ of the variance, salience for $0.36$,
+    and awareness for $0.107$, while hostility, implementation, magnitude, and dependence account for
+    $0.016$ each.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /variance_attribution/lgbtq/shares/E
+    reported: '0.467'
+    units: variance share
+    conditions: variance of log priority risk in the dominant cell, exact for Beta factors and delta method
+      for the awareness gate
+    decimals: 3
+- id: var-S
+  kind: computation
+  passage: For the dominant LGBTQ cell, exposure accounts for $0.467$ of the variance, salience for $0.36$,
+    and awareness for $0.107$, while hostility, implementation, magnitude, and dependence account for
+    $0.016$ each.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /variance_attribution/lgbtq/shares/S
+    reported: '0.36'
+    units: variance share
+    conditions: variance of log priority risk in the dominant cell, exact for Beta factors and delta method
+      for the awareness gate
+    decimals: 2
+- id: var-K
+  kind: computation
+  passage: For the dominant LGBTQ cell, exposure accounts for $0.467$ of the variance, salience for $0.36$,
+    and awareness for $0.107$, while hostility, implementation, magnitude, and dependence account for
+    $0.016$ each.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /variance_attribution/lgbtq/shares/K
+    reported: '0.107'
+    units: variance share
+    conditions: variance of log priority risk in the dominant cell, exact for Beta factors and delta method
+      for the awareness gate
+    decimals: 3
+- id: var-H
+  kind: computation
+  passage: For the dominant LGBTQ cell, exposure accounts for $0.467$ of the variance, salience for $0.36$,
+    and awareness for $0.107$, while hostility, implementation, magnitude, and dependence account for
+    $0.016$ each.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /variance_attribution/lgbtq/shares/H
+    reported: '0.016'
+    units: variance share
+    conditions: variance of log priority risk in the dominant cell, exact for Beta factors and delta method
+      for the awareness gate
+    decimals: 3
+- id: var-ES
+  kind: computation
+  passage: Exposure and awareness together account for $0.574$, and exposure and salience for $0.827$.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /variance_attribution/lgbtq/top_two_share
+    reported: '0.827'
+    units: variance share
+    conditions: variance of log priority risk in the dominant cell, exact for Beta factors and delta method
+      for the awareness gate
+    decimals: 3
+- id: tornado-E
+  kind: computation
+  passage: Moving each input of the LGBTQ rights-model score across its 5-95% interval changes the score
+    by $1.269$ of its value for exposure and by $0.21$ to $0.27$ of its value for each policy factor.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /tornado/swings/E
+    reported: '1.269'
+    units: fraction of base score
+    conditions: one-at-a-time 5-95% swings of the LGBTQ rights-model autoimmunity score
+    decimals: 3
+- id: tornado-min
+  kind: computation
+  passage: Moving each input of the LGBTQ rights-model score across its 5-95% interval changes the score
+    by $1.269$ of its value for exposure and by $0.21$ to $0.27$ of its value for each policy factor.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /tornado/swings/D
+    reported: '0.21'
+    units: fraction of base score
+    conditions: one-at-a-time 5-95% swings of the LGBTQ rights-model autoimmunity score; dependence (smallest
+      policy swing)
+    decimals: 2
+- id: tornado-max
+  kind: computation
+  passage: Moving each input of the LGBTQ rights-model score across its 5-95% interval changes the score
+    by $1.269$ of its value for exposure and by $0.21$ to $0.27$ of its value for each policy factor.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /tornado/swings/P
+    reported: '0.27'
+    units: fraction of base score
+    conditions: one-at-a-time 5-95% swings of the LGBTQ rights-model autoimmunity score; implementation
+      (largest policy swing)
+    decimals: 2
+- id: mc-lgbtq-p50
+  kind: computation
+  passage: Per-supporter priority risks have medians of $0.394$, $0.27$, and $0.148$ for the three cases,
+    with 90% intervals of $0.206$ to $0.636$ (LGBTQ), $0.148$ to $0.429$ (Muslim), and $0.065$ to $0.282$
+    (Latino), which overlap.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /monte_carlo/priority_risk_per_supporter/lgbtq/p50
+    reported: '0.394'
+    units: risk per supporter
+    conditions: 40,000 seeded Monte Carlo draws (seed 20240), Beta inputs at per-factor concentrations
+    decimals: 3
+- id: mc-muslim-p50
+  kind: computation
+  passage: Per-supporter priority risks have medians of $0.394$, $0.27$, and $0.148$ for the three cases,
+    with 90% intervals of $0.206$ to $0.636$ (LGBTQ), $0.148$ to $0.429$ (Muslim), and $0.065$ to $0.282$
+    (Latino), which overlap.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /monte_carlo/priority_risk_per_supporter/muslim/p50
+    reported: '0.27'
+    units: risk per supporter
+    conditions: 40,000 seeded Monte Carlo draws (seed 20240), Beta inputs at per-factor concentrations
+    decimals: 2
+- id: mc-latino-p50
+  kind: computation
+  passage: Per-supporter priority risks have medians of $0.394$, $0.27$, and $0.148$ for the three cases,
+    with 90% intervals of $0.206$ to $0.636$ (LGBTQ), $0.148$ to $0.429$ (Muslim), and $0.065$ to $0.282$
+    (Latino), which overlap.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /monte_carlo/priority_risk_per_supporter/latino/p50
+    reported: '0.148'
+    units: risk per supporter
+    conditions: 40,000 seeded Monte Carlo draws (seed 20240), Beta inputs at per-factor concentrations
+    decimals: 3
+- id: mc-lgbtq-p05
+  kind: computation
+  passage: Per-supporter priority risks have medians of $0.394$, $0.27$, and $0.148$ for the three cases,
+    with 90% intervals of $0.206$ to $0.636$ (LGBTQ), $0.148$ to $0.429$ (Muslim), and $0.065$ to $0.282$
+    (Latino), which overlap.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /monte_carlo/priority_risk_per_supporter/lgbtq/p05
+    reported: '0.206'
+    units: risk per supporter
+    conditions: 40,000 seeded Monte Carlo draws (seed 20240), Beta inputs at per-factor concentrations
+    decimals: 3
+- id: mc-lgbtq-p95
+  kind: computation
+  passage: Per-supporter priority risks have medians of $0.394$, $0.27$, and $0.148$ for the three cases,
+    with 90% intervals of $0.206$ to $0.636$ (LGBTQ), $0.148$ to $0.429$ (Muslim), and $0.065$ to $0.282$
+    (Latino), which overlap.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /monte_carlo/priority_risk_per_supporter/lgbtq/p95
+    reported: '0.636'
+    units: risk per supporter
+    conditions: 40,000 seeded Monte Carlo draws (seed 20240), Beta inputs at per-factor concentrations
+    decimals: 3
+- id: mc-muslim-p05
+  kind: computation
+  passage: Per-supporter priority risks have medians of $0.394$, $0.27$, and $0.148$ for the three cases,
+    with 90% intervals of $0.206$ to $0.636$ (LGBTQ), $0.148$ to $0.429$ (Muslim), and $0.065$ to $0.282$
+    (Latino), which overlap.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /monte_carlo/priority_risk_per_supporter/muslim/p05
+    reported: '0.148'
+    units: risk per supporter
+    conditions: 40,000 seeded Monte Carlo draws (seed 20240), Beta inputs at per-factor concentrations
+    decimals: 3
+- id: mc-muslim-p95
+  kind: computation
+  passage: Per-supporter priority risks have medians of $0.394$, $0.27$, and $0.148$ for the three cases,
+    with 90% intervals of $0.206$ to $0.636$ (LGBTQ), $0.148$ to $0.429$ (Muslim), and $0.065$ to $0.282$
+    (Latino), which overlap.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /monte_carlo/priority_risk_per_supporter/muslim/p95
+    reported: '0.429'
+    units: risk per supporter
+    conditions: 40,000 seeded Monte Carlo draws (seed 20240), Beta inputs at per-factor concentrations
+    decimals: 3
+- id: mc-latino-p05
+  kind: computation
+  passage: Per-supporter priority risks have medians of $0.394$, $0.27$, and $0.148$ for the three cases,
+    with 90% intervals of $0.206$ to $0.636$ (LGBTQ), $0.148$ to $0.429$ (Muslim), and $0.065$ to $0.282$
+    (Latino), which overlap.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /monte_carlo/priority_risk_per_supporter/latino/p05
+    reported: '0.065'
+    units: risk per supporter
+    conditions: 40,000 seeded Monte Carlo draws (seed 20240), Beta inputs at per-factor concentrations
+    decimals: 3
+- id: mc-latino-p95
+  kind: computation
+  passage: Per-supporter priority risks have medians of $0.394$, $0.27$, and $0.148$ for the three cases,
+    with 90% intervals of $0.206$ to $0.636$ (LGBTQ), $0.148$ to $0.429$ (Muslim), and $0.065$ to $0.282$
+    (Latino), which overlap.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /monte_carlo/priority_risk_per_supporter/latino/p95
+    reported: '0.282'
+    units: risk per supporter
+    conditions: 40,000 seeded Monte Carlo draws (seed 20240), Beta inputs at per-factor concentrations
+    decimals: 3
+- id: mc-order
+  kind: computation
+  passage: The per-supporter ordering holds in $0.664$ of draws, so about one draw in three reorders the
+    groups under input uncertainty alone.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /monte_carlo/p_priority_order_holds
+    reported: '0.664'
+    units: share of draws
+    conditions: 40,000 seeded Monte Carlo draws (seed 20240), Beta inputs at per-factor concentrations
+    decimals: 3
+- id: mc-rights
+  kind: computation
+  passage: The most robust statement in the study, that the LGBTQ case is the most misaligned under the
+    rights-dependence reading per supporter, holds in $0.901$ of draws and fails in about one in ten.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /monte_carlo/p_most_misaligned_rights_model/lgbtq
+    reported: '0.901'
+    units: share of draws
+    conditions: 40,000 seeded Monte Carlo draws (seed 20240), Beta inputs at per-factor concentrations
+    decimals: 3
+- id: conclusion-rights
+  kind: computation
+  passage: One configuration holds up, the rights-dependence reading of the LGBTQ case per voter, in $0.901$
+    of draws.
+  evidence:
+    file: simulation/output/results.json
+    run_id: autoimmunity
+    pointer: /monte_carlo/p_most_misaligned_rights_model/lgbtq
+    reported: '0.901'
+    units: share of draws
+    conditions: 40,000 seeded Monte Carlo draws (seed 20240), Beta inputs at per-factor concentrations
+    decimals: 3
+- id: mutz-status
+  kind: source
+  passage: 'Status, as distinct from money, recurs in the work on recent realignments: perceived threat
+    to a group''s relative position moved votes in 2016 on Mutz''s contested but careful account [@mutz2018],
+    and ethnographies of resentment describe its texture directly [@cramer2016; @hochschild2016].'
+  evidence:
+    citation_id: mutz2018
+    locator: Significance statement
+    verified: true
+    verification_note: 'DOI 10.1073/pnas.1718155115; Crossref abstract: in a 2012-2016 panel, change in
+      financial wellbeing had little impact on candidate preference, while changing preferences tracked
+      issues threatening white Americans'' sense of dominant group status.'
+- id: jost-system-justification
+  kind: source
+  passage: System-justification theory documents that members of disadvantaged groups sometimes defend
+    the arrangements that disadvantage them, which supplies a motive for supporting a dominant coalition
+    from within a group it subordinates [@jost1994; @jost2004].
+  evidence:
+    citation_id: jost2004
+    locator: Abstract
+    verified: true
+    verification_note: 'DOI 10.1111/j.1467-9221.2004.00402.x; Crossref abstract: a motive to justify the
+      existing order is partly responsible for internalized inferiority among disadvantaged groups and
+      is sometimes strongest among those most harmed by the status quo.'
+- id: jost1994-false-consciousness
+  kind: source
+  passage: System-justification theory documents that members of disadvantaged groups sometimes defend
+    the arrangements that disadvantage them, which supplies a motive for supporting a dominant coalition
+    from within a group it subordinates [@jost1994; @jost2004].
+  evidence:
+    citation_id: jost1994
+    locator: Abstract
+    verified: true
+    verification_note: 'DOI 10.1111/j.2044-8309.1994.tb01008.x; Crossref abstract: system-justification
+      preserves existing arrangements even at the expense of personal and group interest, including participation
+      by disadvantaged groups in negative stereotypes of themselves.'
+- id: graham-foundations
+  kind: source
+  passage: Moral intuitions are weighted differently across the political spectrum, with loyalty, authority,
+    and sanctity weighing on the right in ways an interest model built only from care and fairness cannot
+    register [@graham2009]; a disposition toward order and conformity, activated by perceived threat,
+    organizes a coherent politics [@stenner2005]; and ethnocentrism and racial resentment shape policy
+    preferences through channels whose measurement remains contested [@kinder2009; @kinder1996].
+  evidence:
+    citation_id: graham2009
+    locator: Abstract
+    verified: true
+    verification_note: 'DOI 10.1037/a0015141; Crossref abstract: liberals rely mainly on harm/care and
+      fairness while conservatives use all five foundations, including ingroup/loyalty, authority and
+      purity/sanctity, more equally.'
+- id: kuklinski-misinformation
+  kind: source
+  passage: Voters who receive the signal reason with it through cues and shortcuts [@lupia1998], and received
+    beliefs can be confident and wrong, a failure distinct from the absence of information [@kuklinski2000].
+  evidence:
+    citation_id: kuklinski2000
+    locator: Abstract
+    verified: true
+    verification_note: 'DOI 10.1111/0022-3816.00033; Crossref abstract: people are misinformed when they
+      confidently hold wrong beliefs, a problem distinct from lack of knowledge.'
+- id: tversky-framing
+  kind: source
+  passage: Framing research shows that salience and awareness depend on how a choice is presented and
+    are not fixed properties of the voter [@tversky1981], so the gates measure the information environment
+    as well as the voter.
+  evidence:
+    citation_id: tversky1981
+    locator: Abstract
+    verified: true
+    verification_note: 'DOI 10.1126/science.7455683; Crossref abstract: framing the same problem differently
+      produces predictable shifts and reversals of preference.'
+- id: iyengar-affect
+  kind: source
+  passage: As partisanship has aligned with race, religion, and place, these identities reinforce one
+    another, and affect toward the out-party has become a motive in its own right [@mason2018; @iyengar2012;
+    @iyengar2019].
+  evidence:
+    citation_id: iyengar2012
+    locator: Abstract
+    verified: true
+    verification_note: 'DOI 10.1093/poq/nfs038; Crossref abstract: Republicans and Democrats increasingly
+      dislike their opponents, and partisan affect is inconsistently founded in policy attitudes.'
+- id: autoimmunity-definition
+  kind: definition
+  passage: 'We call the measured pattern political autoimmunity: support from a group for a coalition
+    whose likely policies weaken the legal, administrative, redistributive, and status protections on
+    which the group disproportionately depends.'
+  rationale: Defines the construct as a structural relation with no verdict about voters.
+- id: risk-product
+  kind: definition
+  passage: 'The adverse policy risk a candidate poses to a group in a domain is the product of five quantities,
+    each scaled to the unit interval:'
+  rationale: Defines adverse policy risk; the product form is a modelling choice explained in the same
+    section.
+- id: net-alignment
+  kind: definition
+  passage: Net alignment under interest model $m$ is weighted protection minus weighted risk,
+  rationale: Defines net alignment.
+- id: synthetic-inputs
+  kind: assumption
+  passage: All results are computed from a synthetic dataset whose exposure, dependence, hostility, implementation,
+    magnitude, salience, and awareness values are stipulated to display the model's behaviour and are
+    not estimates.
+  rationale: All inputs except vote shares are stipulated to display the model's behaviour; results are
+    properties of the specification.
+- id: interest-parameter
+  kind: assumption
+  passage: Interest is treated as a parameter, and the literatures above supply seven defensible settings,
+    each of which reclassifies some apparent self-harm as religious commitment, expressive identity, status,
+    protest, or a tradeoff the voter would make again.
+  rationale: The model fixes no interest function and reports results across seven.
+- id: folk-inference
+  kind: interpretation
+  passage: The folk accusation observes part of $G_m$, the alarming domain, and concludes that $\mathrm{NA}_m
+    < 0$; the inference is valid only when $\Pi_m$ is small, that is, only when the candidate offers the
+    group nothing it wanted.
+  rationale: Follows algebraically from NA = Pi - G.
+- id: counting-frame
+  kind: interpretation
+  passage: Both numbers are correct and answer different questions.
+  rationale: Interpretation of the reversal between per-supporter and population-weighted orderings (results.json
+    /ranking/counting_frame_inverts).
+- id: sign-depends
+  kind: interpretation
+  passage: The same vote and the same data yield opposite verdicts, and the only change is the analyst's
+    definition of interest.
+  rationale: Interpretation of the Latino sign change across interest readings (results.json /ranking/net_sign_by_group/latino/flips_sign).
+- id: E-plus-K
+  kind: interpretation
+  passage: Exposure and awareness together account for $0.574$, and exposure and salience for $0.827$.
+  rationale: The 0.574 figure is the sum of two bound shares, 0.467 (E) and 0.107 (K), from /variance_attribution/lgbtq/shares.
+- id: ecological
+  kind: interpretation
+  passage: A population-weighted number is an ecological summary, and reading it as a per-voter verdict
+    commits the ecological fallacy.
+  rationale: Scope limit on per-voter readings.
+- id: withholding
+  kind: normative
+  passage: A carefully constructed measure of political autoimmunity more often supports withholding the
+    accusation than making it.
+  rationale: Normative conclusion drawn from the robustness results.
+runs:
+- id: autoimmunity
+  required: true
+  record: verification/autoimmunity.json

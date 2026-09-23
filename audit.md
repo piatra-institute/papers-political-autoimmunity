@@ -3,6 +3,17 @@
 Dated log of editorial passes and verification runs. Newest first.
 See the workspace docs (run `papers docs`): writing-pipeline.md §7 and refresh-pipeline.md.
 
+## 2026-09-23 — structured-evidence migration
+
+Structured-evidence migration (references and claims).
+- references.yaml: 44 CSL entries. 23 resolved through Crossref and doi.org and checked for year, title and authors (saltelli2008 keeps its 2008 imprint); 21 entered by hand without DOIs (achen2016, bartels2008, campbell1960, caplan2007, converse1964, dawson1994, downs1957, elster1985, fiorina1981, frank2004, gelman2008, green2002, hochschild2016, key1966, kinder1996, lazarsfeld1944, lupia1998, sen1977, tajfel1979, and the reports cair2024 and pew2025). Id renamed council2024 -> cair2024. Crossref had matched frank2004 to a Foreign Affairs review; replaced by the book.
+- Corrections: Section 6.3 Latino 90% interval lower bound 0.064 -> 0.065 (results.json /monte_carlo/priority_risk_per_supporter/latino/p05 = 0.06452, which rounds half-up to 0.065); shapley1953 pages 307-317 -> 307-318 (Princeton DOI record); hajnal2011 title restored to the published "the Failure (of Political Parties) to Engage the Electorate".
+- claims.yaml: 85 claims (67 computation, 7 source, 5 interpretation, 3 definition, 2 assumption, 1 normative). Every model number in the abstract and Sections 3-6 and 8 is bound to simulation/output/results.json, including stipulated parameters and vote-share anchors. Source claims checked against Crossref abstracts (Mutz status threat; Jost and Banaji, Jost et al. system justification; Graham et al. moral foundations; Kuklinski et al. misinformation; Tversky and Kahneman framing; Iyengar et al. 2012 affective polarization).
+- Flagged, not bound: the Latino vote share 0.46 is described as anchored to Pew (2025); the Pew page reports validated Hispanic voters at 48% Trump and 51% Harris, so the model's anchor sits two points below Pew's figure (the "roughly even" description is accurate). Left for the author, since changing the anchor would change the stipulated input and every Latino result.
+- Not verified, left unbound: CAIR exit poll (page behind a bot check); LGBTQ exit-poll share; Sears and Funk, Riker and Ordeshook, Miller et al., Crenshaw, Iyengar et al. 2019 (abstracts do not state the attributed claim or are unavailable); book claims (Frank, Gelman, Bartels, Elster, Festinger, Downs, Brennan and Lomasky, Campbell et al., Green et al., Mason, Sidanius and Pratto, Hajnal and Lee, Cramer, Hochschild, Stenner, Kinder and Kam, Kinder and Sanders, Key, Fiorina, Zaller, Converse, Lupia and McCubbins, Dawson, Achen and Bartels, Caplan, Lazarsfeld et al., Tajfel and Turner, Shapley, Saltelli et al., Sen).
+- Run: autoimmunity (uv run python run_all.py, seed 20240), reproduced results.json byte-identically; receipt verification/autoimmunity.json.
+- metadata claims_target: claim-ledger.
+
 ## 2026-09-23 — prose revision
 
 Headings now: Abstract; 1. Introduction; 2. Seven Interest Functions; 3. Model; 4. Foreseeability and Salience Gates; 5. Three 2024 Cases; 6. Interest Function, Counting Frame, and Uncertainty (6.1 Counting frame; 6.2 Interest function; 6.3 Sources of uncertainty); 7. Limitations; 8. Conclusion; Reproducibility.

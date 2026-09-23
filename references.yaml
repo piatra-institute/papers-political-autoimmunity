@@ -1,0 +1,642 @@
+# CSL references with stable IDs; cite with Pandoc [@id] syntax.
+# Migrated from the legacy inline bibliography. Entries with a DOI were resolved through doi.org
+# content negotiation (CSL-JSON) and checked for year and title; others were matched in Crossref
+# or entered by hand. Provenance per entry is in sources.md.
+references:
+- id: achen2016
+  type: book
+  title: 'Democracy for Realists: Why Elections Do Not Produce Responsive Government'
+  author:
+  - family: Achen
+    given: Christopher H.
+  - family: Bartels
+    given: Larry M.
+  publisher: Princeton University Press
+  publisher-place: Princeton, NJ
+  issued:
+    date-parts:
+    - - 2016
+- id: bartels2008
+  type: book
+  title: 'Unequal Democracy: The Political Economy of the New Gilded Age'
+  author:
+  - family: Bartels
+    given: Larry M.
+  publisher: Princeton University Press
+  publisher-place: Princeton, NJ
+  issued:
+    date-parts:
+    - - 2008
+- id: brennan1993
+  type: book
+  title: 'Democracy and Decision: The Pure Theory of Electoral Preference'
+  editor:
+  - given: Geoffrey
+    family: Brennan
+  - given: Loren
+    family: Lomasky
+  publisher: Cambridge University Press
+  DOI: 10.1017/cbo9781139173544
+  issued:
+    date-parts:
+    - - 1993
+  publisher-place: Cambridge
+- id: campbell1960
+  type: book
+  title: The American Voter
+  author:
+  - family: Campbell
+    given: Angus
+  - family: Converse
+    given: Philip E.
+  - family: Miller
+    given: Warren E.
+  - family: Stokes
+    given: Donald E.
+  publisher: Wiley
+  publisher-place: New York
+  issued:
+    date-parts:
+    - - 1960
+- id: caplan2007
+  type: book
+  title: 'The Myth of the Rational Voter: Why Democracies Choose Bad Policies'
+  author:
+  - family: Caplan
+    given: Bryan
+  publisher: Princeton University Press
+  publisher-place: Princeton, NJ
+  issued:
+    date-parts:
+    - - 2007
+- id: converse1964
+  type: chapter
+  title: The Nature of Belief Systems in Mass Publics
+  author:
+  - family: Converse
+    given: Philip E.
+  editor:
+  - family: Apter
+    given: David E.
+  container-title: Ideology and Discontent
+  publisher-place: New York
+  page: 206-261
+  publisher: Free Press
+  issued:
+    date-parts:
+    - - 1964
+- id: cair2024
+  type: report
+  title: 'CAIR Exit Poll of Muslim Voters: 2024 General Election'
+  author:
+  - literal: Council on American-Islamic Relations
+  publisher: CAIR
+  publisher-place: Washington, DC
+  issued:
+    date-parts:
+    - - 2024
+- id: cramer2016
+  type: book
+  title: 'The Politics of Resentment: Rural Consciousness in Wisconsin and the Rise of Scott Walker'
+  author:
+  - given: Katherine J.
+    family: Cramer
+  publisher: University of Chicago Press
+  DOI: 10.7208/chicago/9780226349251.001.0001
+  issued:
+    date-parts:
+    - - 2016
+  publisher-place: Chicago
+- id: crenshaw1991
+  type: article-journal
+  title: 'Mapping the Margins: Intersectionality, Identity Politics, and Violence against Women of Color'
+  author:
+  - family: Crenshaw
+    given: Kimberlé
+  container-title: Stanford Law Review
+  volume: '43'
+  issue: '6'
+  page: 1241-1299
+  DOI: 10.2307/1229039
+  issued:
+    date-parts:
+    - - 1991
+- id: dawson1994
+  type: book
+  title: 'Behind the Mule: Race and Class in African-American Politics'
+  author:
+  - family: Dawson
+    given: Michael C.
+  publisher: Princeton University Press
+  publisher-place: Princeton, NJ
+  issued:
+    date-parts:
+    - - 1994
+- id: downs1957
+  type: book
+  title: An Economic Theory of Democracy
+  author:
+  - family: Downs
+    given: Anthony
+  publisher: Harper & Row
+  publisher-place: New York
+  issued:
+    date-parts:
+    - - 1957
+- id: elster1985
+  type: book
+  title: Making Sense of Marx
+  author:
+  - family: Elster
+    given: Jon
+  publisher: Cambridge University Press
+  publisher-place: Cambridge
+  issued:
+    date-parts:
+    - - 1985
+- id: festinger1957
+  type: book
+  title: A Theory of Cognitive Dissonance
+  author:
+  - given: Leon
+    family: Festinger
+  publisher: Stanford University Press
+  DOI: 10.1515/9781503620766
+  issued:
+    date-parts:
+    - - 1957
+- id: fiorina1981
+  type: book
+  title: Retrospective Voting in American National Elections
+  author:
+  - family: Fiorina
+    given: Morris P.
+  publisher: Yale University Press
+  publisher-place: New Haven, CT
+  issued:
+    date-parts:
+    - - 1981
+- id: frank2004
+  type: book
+  title: What's the Matter with Kansas? How Conservatives Won the Heart of America
+  author:
+  - family: Frank
+    given: Thomas
+  publisher: Metropolitan Books
+  publisher-place: New York
+  issued:
+    date-parts:
+    - - 2004
+- id: gelman2008
+  type: book
+  title: 'Red State, Blue State, Rich State, Poor State: Why Americans Vote the Way They Do'
+  author:
+  - family: Gelman
+    given: Andrew
+  publisher: Princeton University Press
+  publisher-place: Princeton, NJ
+  issued:
+    date-parts:
+    - - 2008
+- id: graham2009
+  type: article-journal
+  title: Liberals and Conservatives Rely on Different Sets of Moral Foundations
+  author:
+  - given: Jesse
+    family: Graham
+  - given: Jonathan
+    family: Haidt
+  - given: Brian A.
+    family: Nosek
+  container-title: Journal of Personality and Social Psychology
+  volume: '96'
+  issue: '5'
+  page: 1029-1046
+  DOI: 10.1037/a0015141
+  issued:
+    date-parts:
+    - - 2009
+- id: green2002
+  type: book
+  title: 'Partisan Hearts and Minds: Political Parties and the Social Identities of Voters'
+  author:
+  - family: Green
+    given: Donald P.
+  - family: Palmquist
+    given: Bradley
+  - family: Schickler
+    given: Eric
+  publisher: Yale University Press
+  publisher-place: New Haven, CT
+  issued:
+    date-parts:
+    - - 2002
+- id: hajnal2011
+  type: book
+  title: 'Why Americans Don''t Join the Party: Race, Immigration, and the Failure (of Political Parties)
+    to Engage the Electorate'
+  author:
+  - given: Zoltan L.
+    family: Hajnal
+  - given: Taeku
+    family: Lee
+  publisher: Princeton University Press
+  DOI: 10.1515/9781400838776
+  issued:
+    date-parts:
+    - - 2011
+  publisher-place: Princeton, NJ
+- id: hochschild2016
+  type: book
+  title: 'Strangers in Their Own Land: Anger and Mourning on the American Right'
+  author:
+  - family: Hochschild
+    given: Arlie Russell
+  publisher: New Press
+  publisher-place: New York
+  issued:
+    date-parts:
+    - - 2016
+- id: iyengar2019
+  type: article-journal
+  title: The Origins and Consequences of Affective Polarization in the United States
+  author:
+  - given: Shanto
+    family: Iyengar
+  - given: Yphtach
+    family: Lelkes
+  - given: Matthew
+    family: Levendusky
+  - given: Neil
+    family: Malhotra
+  - given: Sean J.
+    family: Westwood
+  container-title: Annual Review of Political Science
+  volume: '22'
+  issue: '1'
+  page: 129-146
+  DOI: 10.1146/annurev-polisci-051117-073034
+  issued:
+    date-parts:
+    - - 2019
+- id: iyengar2012
+  type: article-journal
+  title: 'Affect, Not Ideology: A Social Identity Perspective on Polarization'
+  author:
+  - given: Shanto
+    family: Iyengar
+  - given: Gaurav
+    family: Sood
+  - given: Yphtach
+    family: Lelkes
+  container-title: Public Opinion Quarterly
+  volume: '76'
+  issue: '3'
+  page: 405-431
+  DOI: 10.1093/poq/nfs038
+  issued:
+    date-parts:
+    - - 2012
+- id: jost1994
+  type: article-journal
+  title: The Role of Stereotyping in System-Justification and the Production of False Consciousness
+  author:
+  - given: John T.
+    family: Jost
+  - given: Mahzarin R.
+    family: Banaji
+  container-title: British Journal of Social Psychology
+  volume: '33'
+  issue: '1'
+  page: 1-27
+  DOI: 10.1111/j.2044-8309.1994.tb01008.x
+  issued:
+    date-parts:
+    - - 1994
+- id: jost2004
+  type: article-journal
+  title: 'A Decade of System Justification Theory: Accumulated Evidence of Conscious and Unconscious Bolstering
+    of the Status Quo'
+  author:
+  - given: John T.
+    family: Jost
+  - given: Mahzarin R.
+    family: Banaji
+  - given: Brian A.
+    family: Nosek
+  container-title: Political Psychology
+  volume: '25'
+  issue: '6'
+  page: 881-919
+  DOI: 10.1111/j.1467-9221.2004.00402.x
+  issued:
+    date-parts:
+    - - 2004
+- id: key1966
+  type: book
+  title: 'The Responsible Electorate: Rationality in Presidential Voting, 1936-1960'
+  author:
+  - family: Key
+    given: V. O.
+    suffix: Jr.
+  publisher: Harvard University Press
+  publisher-place: Cambridge, MA
+  issued:
+    date-parts:
+    - - 1966
+- id: kinder2009
+  type: book
+  title: 'Us Against Them: Ethnocentric Foundations of American Opinion'
+  author:
+  - given: Donald R.
+    family: Kinder
+  - given: Cindy D.
+    family: Kam
+  publisher: University of Chicago Press
+  DOI: 10.7208/chicago/9780226435725.001.0001
+  issued:
+    date-parts:
+    - - 2009
+  publisher-place: Chicago
+- id: kinder1996
+  type: book
+  title: 'Divided by Color: Racial Politics and Democratic Ideals'
+  author:
+  - family: Kinder
+    given: Donald R.
+  - family: Sanders
+    given: Lynn M.
+  publisher: University of Chicago Press
+  publisher-place: Chicago
+  issued:
+    date-parts:
+    - - 1996
+- id: kuklinski2000
+  type: article-journal
+  title: Misinformation and the Currency of Democratic Citizenship
+  author:
+  - given: James H.
+    family: Kuklinski
+  - given: Paul J.
+    family: Quirk
+  - given: Jennifer
+    family: Jerit
+  - given: David
+    family: Schwieder
+  - given: Robert F.
+    family: Rich
+  container-title: Journal of Politics
+  volume: '62'
+  issue: '3'
+  page: 790-816
+  DOI: 10.1111/0022-3816.00033
+  issued:
+    date-parts:
+    - - 2000
+- id: lazarsfeld1944
+  type: book
+  title: 'The People''s Choice: How the Voter Makes Up His Mind in a Presidential Campaign'
+  author:
+  - family: Lazarsfeld
+    given: Paul F.
+  - family: Berelson
+    given: Bernard
+  - family: Gaudet
+    given: Hazel
+  publisher: Columbia University Press
+  publisher-place: New York
+  issued:
+    date-parts:
+    - - 1944
+- id: lupia1998
+  type: book
+  title: 'The Democratic Dilemma: Can Citizens Learn What They Need to Know?'
+  author:
+  - family: Lupia
+    given: Arthur
+  - family: McCubbins
+    given: Mathew D.
+  publisher: Cambridge University Press
+  publisher-place: Cambridge
+  issued:
+    date-parts:
+    - - 1998
+- id: mason2018
+  type: book
+  title: 'Uncivil Agreement: How Politics Became Our Identity'
+  author:
+  - given: Lilliana
+    family: Mason
+  publisher: University of Chicago Press
+  DOI: 10.7208/chicago/9780226524689.001.0001
+  issued:
+    date-parts:
+    - - 2018
+  publisher-place: Chicago
+- id: miller1981
+  type: article-journal
+  title: Group Consciousness and Political Participation
+  author:
+  - given: Arthur H.
+    family: Miller
+  - given: Patricia
+    family: Gurin
+  - given: Gerald
+    family: Gurin
+  - given: Oksana
+    family: Malanchuk
+  container-title: American Journal of Political Science
+  volume: '25'
+  issue: '3'
+  page: 494-511
+  DOI: 10.2307/2110816
+  issued:
+    date-parts:
+    - - 1981
+- id: mutz2018
+  type: article-journal
+  title: Status Threat, Not Economic Hardship, Explains the 2016 Presidential Vote
+  author:
+  - given: Diana C.
+    family: Mutz
+  container-title: Proceedings of the National Academy of Sciences
+  volume: '115'
+  issue: '19'
+  DOI: 10.1073/pnas.1718155115
+  issued:
+    date-parts:
+    - - 2018
+  page: E4330-E4339
+- id: pew2025
+  type: report
+  title: Behind Trump's 2024 Victory, a More Racially and Ethnically Diverse Voter Coalition
+  author:
+  - literal: Pew Research Center
+  publisher: Pew Research Center
+  publisher-place: Washington, DC
+  URL: https://www.pewresearch.org/politics/2025/06/26/behind-trumps-2024-victory-a-more-racially-and-ethnically-diverse-voter-coalition/
+  issued:
+    date-parts:
+    - - 2025
+- id: riker1968
+  type: article-journal
+  title: A Theory of the Calculus of Voting
+  author:
+  - given: William H.
+    family: Riker
+  - given: Peter C.
+    family: Ordeshook
+  container-title: American Political Science Review
+  volume: '62'
+  issue: '1'
+  page: 25-42
+  DOI: 10.2307/1953324
+  issued:
+    date-parts:
+    - - 1968
+- id: saltelli2008
+  type: book
+  title: 'Global Sensitivity Analysis: The Primer'
+  author:
+  - given: Andrea
+    family: Saltelli
+  - given: Marco
+    family: Ratto
+  - given: Terry
+    family: Andres
+  - given: Francesca
+    family: Campolongo
+  - given: Jessica
+    family: Cariboni
+  - given: Debora
+    family: Gatelli
+  - given: Michaela
+    family: Saisana
+  - given: Stefano
+    family: Tarantola
+  publisher: Wiley
+  DOI: 10.1002/9780470725184
+  issued:
+    date-parts:
+    - - 2008
+  publisher-place: Chichester
+- id: sears1991
+  type: article-journal
+  title: The Role of Self-Interest in Social and Political Attitudes
+  author:
+  - given: David O.
+    family: Sears
+  - given: Carolyn L.
+    family: Funk
+  container-title: Advances in Experimental Social Psychology
+  page: 1-91
+  DOI: 10.1016/s0065-2601(08)60327-5
+  issued:
+    date-parts:
+    - - 1991
+  volume: '24'
+- id: sen1977
+  type: article-journal
+  title: 'Rational Fools: A Critique of the Behavioral Foundations of Economic Theory'
+  author:
+  - family: Sen
+    given: Amartya
+  container-title: Philosophy & Public Affairs
+  volume: '6'
+  issue: '4'
+  page: 317-344
+  issued:
+    date-parts:
+    - - 1977
+- id: shapley1953
+  type: chapter
+  title: A Value for n-Person Games
+  author:
+  - given: L. S.
+    family: Shapley
+  container-title: Contributions to the Theory of Games, Volume II
+  page: 307-318
+  publisher: Princeton University Press
+  DOI: 10.1515/9781400881970-018
+  issued:
+    date-parts:
+    - - 1953
+  editor:
+  - family: Kuhn
+    given: Harold W.
+  - family: Tucker
+    given: Albert W.
+  collection-title: Annals of Mathematics Studies
+  collection-number: '28'
+- id: sidanius1999
+  type: book
+  title: 'Social Dominance: An Intergroup Theory of Social Hierarchy and Oppression'
+  author:
+  - given: Jim
+    family: Sidanius
+  - given: Felicia
+    family: Pratto
+  publisher: Cambridge University Press
+  DOI: 10.1017/cbo9781139175043
+  issued:
+    date-parts:
+    - - 1999
+  publisher-place: Cambridge
+- id: stenner2005
+  type: book
+  title: The Authoritarian Dynamic
+  author:
+  - given: Karen
+    family: Stenner
+  publisher: Cambridge University Press
+  DOI: 10.1017/cbo9780511614712
+  issued:
+    date-parts:
+    - - 2005
+- id: tajfel1979
+  type: chapter
+  title: An Integrative Theory of Intergroup Conflict
+  author:
+  - family: Tajfel
+    given: Henri
+  - family: Turner
+    given: John C.
+  editor:
+  - family: Austin
+    given: William G.
+  - family: Worchel
+    given: Stephen
+  container-title: The Social Psychology of Intergroup Relations
+  publisher-place: Monterey, CA
+  page: 33-47
+  publisher: Brooks/Cole
+  issued:
+    date-parts:
+    - - 1979
+- id: tversky1981
+  type: article-journal
+  title: The Framing of Decisions and the Psychology of Choice
+  author:
+  - given: Amos
+    family: Tversky
+  - given: Daniel
+    family: Kahneman
+  container-title: Science
+  volume: '211'
+  issue: '4481'
+  page: 453-458
+  DOI: 10.1126/science.7455683
+  issued:
+    date-parts:
+    - - 1981
+- id: zaller1992
+  type: book
+  title: The Nature and Origins of Mass Opinion
+  author:
+  - given: John R.
+    family: Zaller
+  publisher: Cambridge University Press
+  DOI: 10.1017/cbo9780511818691
+  issued:
+    date-parts:
+    - - 1992
