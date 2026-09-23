@@ -159,6 +159,7 @@ def _deterministic() -> dict:
         fore = sum(r["FR"] for r in risk.values())
         prio = sum(r["PR"] for r in risk.values())
         attrition = prio / gross
+        assert 0.0 < attrition <= 1.0 and prio <= fore <= gross
         per_supporter_priority[gname] = prio
 
         # net alignment and autoimmunity under each interest model
@@ -180,7 +181,9 @@ def _deterministic() -> dict:
             "priority_risk_per_supporter": prio,
             "gross_risk_pop_weighted": V * gross,
             "priority_risk_pop_weighted": V * prio,
-            "awareness_attrition": attrition,
+            "awareness_attrition": attrition,   # misnamed: this is priority/gross, the share retained
+            "awareness_retained": attrition,
+            "awareness_removed": 1.0 - attrition,
             "protective_benefit_total": sum(c["B"] for c in cells.values()),
             "cells": {k: {**risk[k]} for k in cells},
             "interest_models": models,

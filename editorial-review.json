@@ -1,0 +1,10 @@
+{
+  "manuscript_sha256": "26cd95db8bedc468690c5cfa0da78e936f130b81c89c404130f30990a73e9dbb",
+  "full_read": true,
+  "argument_review": true,
+  "structure_review": true,
+  "voice_review": true,
+  "source_review": true,
+  "final_read": true,
+  "notes": "Full prose revision to a declarative register with descriptive headings (Results split into counting frame, interest function, and uncertainty subsections, plus explicit Limitations, Conclusion and Reproducibility); self-reference, contrast tics, epigrams and aphoristic titles removed; several numerical statements corrected against results.json."
+}

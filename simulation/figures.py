@@ -82,7 +82,7 @@ def plot_exposure(results: dict, path: str) -> None:
     axR.set_xticks(x)
     axR.set_xticklabels([GLABEL[g] for g in glist])
     axR.set_ylabel("risk per supporter")
-    axR.set_title("The awareness gate (label: priority / gross)", fontsize=10)
+    axR.set_title("Gross, foreseeable, priority risk (label: share retained)", fontsize=10)
     axR.legend(frameon=False, fontsize=8, loc="upper right")
     axR.spines[["top", "right"]].set_visible(False)
 
@@ -109,13 +109,15 @@ def plot_verdict(results: dict, path: str) -> None:
               for m in INTEREST_MODELS]
         axL.plot(x, ys, "o-", color=GCOLOR[g], ms=5, lw=1.8, label=GLABEL[g])
     axL.axhline(0, color=INK, lw=0.9, ls="--")
-    axL.text(len(x) - 1, 0.012, "aligned", ha="right", va="bottom", fontsize=7.5, color=MUTE)
-    axL.text(len(x) - 1, -0.012, "misaligned", ha="right", va="top", fontsize=7.5, color=MUTE)
+    axL.text(-0.1, 0.012, "aligned", ha="left", va="bottom", fontsize=7.5, color=MUTE)
+    axL.text(-0.1, -0.012, "misaligned", ha="left", va="top", fontsize=7.5, color=MUTE)
     axL.set_xticks(x)
-    axL.set_xticklabels([MLABEL[m] for m in INTEREST_MODELS], fontsize=7.5)
+    axL.set_xticklabels([MLABEL[m].replace("\n", " ") for m in INTEREST_MODELS], fontsize=7.5,
+                        rotation=35, ha="right", rotation_mode="anchor")
     axL.set_ylabel("net alignment per supporter")
-    axL.set_title("Verdict by interest function", fontsize=10)
-    axL.legend(frameon=False, fontsize=8, loc="lower left")
+    axL.set_title("Net alignment by interest function", fontsize=10)
+    axL.legend(frameon=False, fontsize=8, loc="upper center", ncol=3)
+    axL.set_ylim(-0.33, 0.36)
     axL.spines[["top", "right"]].set_visible(False)
 
     # --- center: counting-frame inversion (slope/bump chart) ---------------
@@ -131,7 +133,7 @@ def plot_verdict(results: dict, path: str) -> None:
     axC.set_xticklabels(["per supporter\n(voter-level)", "population-weighted\n(bloc-level)"], fontsize=8.5)
     axC.set_yticks([1, 2, 3]); axC.set_yticklabels(["most\nmisaligned", "2nd", "3rd"], fontsize=8)
     axC.set_ylim(3.5, 0.5); axC.set_xlim(-0.45, 1.45)
-    axC.set_title("Same data, two counting frames", fontsize=10)
+    axC.set_title("Group rank: per supporter vs. population-weighted", fontsize=10)
     axC.spines[["top", "right", "bottom"]].set_visible(False)
     axC.tick_params(bottom=False)
 
@@ -150,7 +152,7 @@ def plot_verdict(results: dict, path: str) -> None:
                          for g in glist], fontsize=8)
     axR.set_ylabel("share of $\\mathrm{Var}(\\log PR)$")
     axR.set_ylim(0, 1)
-    axR.set_title("What drives the uncertainty\n(dominant cell)", fontsize=10)
+    axR.set_title("Log-variance share by input\n(dominant cell)", fontsize=10)
     axR.legend(frameon=False, fontsize=8, ncol=2, loc="upper center",
                bbox_to_anchor=(0.5, -0.12))
     axR.spines[["top", "right"]].set_visible(False)

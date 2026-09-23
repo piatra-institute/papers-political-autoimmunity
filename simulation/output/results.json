@@ -9,6 +9,8 @@
         "gross_risk_pop_weighted": 0.09831285,
         "priority_risk_pop_weighted": 0.04843110825000001,
         "awareness_attrition": 0.49262236065783876,
+        "awareness_retained": 0.49262236065783876,
+        "awareness_removed": 0.5073776393421612,
         "protective_benefit_total": 0.0,
         "cells": {
           "civil_rights": {
@@ -76,6 +78,8 @@
         "gross_risk_pop_weighted": 0.0994287,
         "priority_risk_pop_weighted": 0.05810673225000001,
         "awareness_attrition": 0.5844060341732318,
+        "awareness_retained": 0.5844060341732318,
+        "awareness_removed": 0.4155939658267682,
         "protective_benefit_total": 0.0,
         "cells": {
           "entry_travel": {
@@ -143,6 +147,8 @@
         "gross_risk_pop_weighted": 0.16889475,
         "priority_risk_pop_weighted": 0.072761535,
         "awareness_attrition": 0.4308099274844244,
+        "awareness_retained": 0.4308099274844244,
+        "awareness_removed": 0.5691900725155756,
         "protective_benefit_total": 0.5,
         "cells": {
           "immigration": {

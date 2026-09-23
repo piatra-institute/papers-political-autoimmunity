@@ -3,6 +3,20 @@
 Dated log of editorial passes and verification runs. Newest first.
 See the workspace docs (run `papers docs`): writing-pipeline.md §7 and refresh-pipeline.md.
 
+## 2026-09-23 — prose revision
+
+Headings now: Abstract; 1. Introduction; 2. Seven Interest Functions; 3. Model; 4. Foreseeability and Salience Gates; 5. Three 2024 Cases; 6. Interest Function, Counting Frame, and Uncertainty (6.1 Counting frame; 6.2 Interest function; 6.3 Sources of uncertainty); 7. Limitations; 8. Conclusion; Reproducibility.
+Tic counts before -> after (diag.py): rather than 19 -> 0; inline ", not X" 1 -> 0; "not X but Y" 3 -> 0; "the paper/this paper" 4 -> 0; worth 1 -> 0; exactly/precisely 4 -> 1 (the word "exact" describing a computation); merely 1 -> 0.
+Grid audit: no grid-located thresholds; deterministic quantities are closed form and the Monte Carlo is seeded. No refinement needed.
+Corrections:
+- results.json field awareness_attrition is priority/gross, i.e. the share of gross risk RETAINED. The abstract said the gate "removes between 0.431 and 0.584" and the Figure 1 caption "remove between 43% and 58%"; corrected to retains 0.431-0.584, removes 0.416-0.569 (LGBTQ 0.507, Muslim 0.416, Latino 0.569). analyses.py now also writes awareness_retained and awareness_removed (old field kept) and asserts prio <= fore <= gross.
+- "The per-supporter ordering ... is stable across all seven interest functions": true for priority risk (which does not depend on the interest function) but not for the autoimmunity score, whose per-supporter ordering takes two forms (Muslim and Latino swap under the expressive and protest readings; LGBTQ is most misaligned under all seven). Text now states both.
+- Tornado: "by a fifth of that or less for any policy factor" -> 0.21 to 0.27 of the score (implementation 0.266 and magnitude 0.261 exceed 1.269/5 = 0.254).
+- Variance decomposition described as "exact" -> exact for the Beta factors, delta method for the composite awareness gate K (as implemented).
+- LGBTQ net alignment range stated as -0.285 to -0.273 (subjective reading is -0.285, previously "near -0.273").
+- Concentrations of the priors (5, 5, 4 for E, S, a; 30 for the record-based inputs) now stated.
+Figures: panel titles "The awareness gate", "Verdict by interest function", "Same data, two counting frames", "What drives the uncertainty" replaced with descriptive titles.
+
 ## 2026-06-16 — initial full build
 
 Scope: first complete build from the single seed chat (a research-design dump of the "political autoimmunity / rights-dependence voting misalignment" idea). Wrote the simulation, the paper, and all provenance docs; brought the paper to a clean build and `check => PASS`.
